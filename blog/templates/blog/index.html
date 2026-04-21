@@ -1,0 +1,43 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block page_title %}
+    <h2>Pinned</h2>
+{% endblock page_title %}
+{% block page_content %}
+    <div class="pinned-posts">
+        {% for post in pinned %}
+            <div class="pinned-card">
+                {% if post.image %}
+                    <img src="{{ post.image.url }}">
+                {% else %}
+                    <img src="{% static 'images/default.jpg' %}">
+                {% endif %}
+                <small>
+                    <a href="{% url 'blog_theme' post.theme.name %}">{{ post.theme.name }}</a> 
+                    | {{ post.date_posted.date }}
+                </small>
+                <h3><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h3>
+                <p>{{ post.content|truncatewords:20 }}...</p>
+            </div>
+        {% endfor %}
+    </div>
+    <h2>Recent</h2>
+    <div class="recent-posts">
+        {% for post in recent %}
+            <div class="recent-card">
+                {% if post.image %}
+                    <img src="{{ post.image.url }}">
+                {% else %}
+                    <img src="{% static 'images/default.jpg' %}">
+                {% endif %}
+                <small>
+                    <a href="{% url 'blog_theme' post.theme.name %}">{{ post.theme.name }}</a> 
+                    | {{ post.date_posted.date }}
+                </small>
+                <h3><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h3>
+                <p>{{ post.content|truncatewords:20 }}...</p>
+            </div>
+        {% endfor %}
+    </div>
+{% endblock page_content %}

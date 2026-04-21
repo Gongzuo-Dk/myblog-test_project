@@ -1,0 +1,21 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+    <h2>{{ post.title }}</h2>
+{% endblock page_title %}
+
+{% block page_content %}
+    <div class="post-detail">
+        <small>{{ post.date_posted.date }} |
+            <a href="{% url 'blog_theme' post.theme.name %}">{{ post.theme.name }}</a>
+        </small>
+        {% if post.image %}
+            <img src="{{ post.image.url }}">
+        {% else %}
+            <img src="{% static 'images/default.jpg' %}">
+        {% endif %}
+        <p>{{ post.content|linebreaks }}</p>
+    </div>
+{% endblock page_content %}

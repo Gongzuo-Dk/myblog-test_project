@@ -1,0 +1,40 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}MyBlog{% endblock title %}</title>
+    <link rel="stylesheet" href="https://cdn.simplecss.org/simple.min.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    <nav>
+        <a href="{% url 'blog_index' %}">Home</a>
+        <a href="{% url 'feed' %}">All</a>
+        <a href="{% url 'theme_list' %}">Themes</a>
+        <a href="{% url 'about' %}">About</a>
+
+        <form action="{% url 'search' %}" method="GET">
+            <input 
+                type="search" 
+                name="q" 
+                placeholder="Search posts..."
+                maxlength="50"
+            >
+            <button type="submit">Search</button>
+        </form>
+    </nav>
+
+    <main>
+        {% block page_title %}{% endblock page_title %}
+        {% block page_content %}{% endblock page_content %}
+    </main>
+
+    <footer>
+        <p>MyBlog 2026</p>
+    </footer>
+
+</body>
+</html>

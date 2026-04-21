@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block page_title %}
+    <h2>Themes</h2>
+{% endblock page_title %}
+
+{% block page_content %}
+    {% for theme in themes %}
+        <li><a href="{% url 'blog_theme' theme.name %}">{{ theme.name }}</a></li>
+    {% endfor %}
+{% endblock page_content %}

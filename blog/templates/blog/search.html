@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_title %}
+    <h2>Search Results for "{{ query }}"</h2>
+{% endblock page_title %}
+
+{% block page_content %}
+    {% if error %}
+        <p>{{ error }}</p>
+    {% elif results %}
+        {% for post in results %}
+            <h3><a href="{% url 'blog_detail' post.pk %}">{{ post.title }}</a></h3>
+            <small>{{ post.date_posted.date }} |
+                <a href="{% url 'blog_theme' post.theme.name %}">{{ post.theme.name }}</a>
+            </small>
+            {% if post.image %}
+                <img src="{{ post.image.url }}">
+            {% else %}
+                <img src="{% static 'images/default.jpg' %}">
+            {% endif %}
+            <p>{{ post.content|truncatewords:80 }}</p>
+        {% endfor %}
+    {% elif query %}
+        <p>No posts found for "{{ query }}".</p>
+    {% else %}
+        <p>Enter something in the search bar above.</p>
+    {% endif %}
+{% endblock page_content %}
+
