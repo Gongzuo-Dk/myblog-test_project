@@ -9,22 +9,66 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
+    <nav class="navbar-container">
+        <div class="navbar">
+            <!-- Brand/Logo -->
+            <a href="{% url 'blog_index' %}" class="navbar-brand">
+                <div class="logo-icon"></div>
+                <span class="brand-text">MyBlog</span>
+            </a>
 
-    <nav>
-        <a href="{% url 'blog_index' %}">Home</a>
-        <a href="{% url 'feed' %}">All</a>
-        <a href="{% url 'theme_list' %}">Themes</a>
-        <a href="{% url 'about' %}">About</a>
-
-        <form action="{% url 'search' %}" method="GET">
-            <input 
-                type="search" 
-                name="q" 
-                placeholder="Search posts..."
-                maxlength="50"
-            >
-            <button type="submit">Search</button>
-        </form>
+            <!-- Navigation Links -->
+            <ul class="navbar-nav" id="navbarNav">
+                <li class="nav-item">
+                    <a href="{% url 'blog_index' %}" class="nav-link active">
+                        <svg class="nav-icon" viewBox="0 0 24 24">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+                            <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                        </svg>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'feed' %}" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24">
+                            <rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect>
+                            <line x1="8" y1="21" x2="16" y2="21"></line>
+                            <line x1="12" y1="17" x2="12" y2="21"></line>
+                        </svg>
+                        <span>All</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'theme_list' %}" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <span>Themes</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="{% url 'about' %}" class="nav-link">
+                        <svg class="nav-icon" viewBox="0 0 24 24">
+                            <rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect>
+                            <path d="M16 3h6v4"></path>
+                            <path d="m22 7-10-4-10 4"></path>
+                        </svg>
+                        <span>About</span>
+                    </a>
+                </li>                <li class="nav-item">
+                    <form action="{% url 'search' %}" method="GET">
+                        <input 
+                            type="search" 
+                            name="q" 
+                            placeholder="Search posts..."
+                            maxlength="50"
+                        >
+                        <button type="submit">Search</button>
+                    </form>
+                </li>
+            </ul>
+        </div>    
     </nav>
 
     <main>

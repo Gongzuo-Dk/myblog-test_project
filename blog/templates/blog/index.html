@@ -2,7 +2,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_title %}
-    <h2>Pinned</h2>
+    <h3>Pinned</h3>
 {% endblock page_title %}
 {% block page_content %}
     <div class="pinned-posts">
@@ -22,7 +22,7 @@
             </div>
         {% endfor %}
     </div>
-    <h2>Recent</h2>
+    <h3>Recent</h3>
     <div class="recent-posts">
         {% for post in recent %}
             <div class="recent-card">
