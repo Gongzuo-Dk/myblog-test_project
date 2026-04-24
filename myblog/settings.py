@@ -126,11 +126,11 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = BASE_DIR / 'media'
 
-# Static file serving.
-# https://whitenoise.readthedocs.io/en/stable/django.html#add-compression-and-caching-support
-STORAGES = {
-    # ...
-    "staticfiles": {
-        "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
-    },
-}
+# # Static file serving.
+# # https://whitenoise.readthedocs.io/en/stable/django.html#add-compression-and-caching-support
+# STORAGES = {
+#     # ...
+#     "staticfiles": {
+#         "BACKEND": "whitenoise.storage.CompressedManifestStaticFilesStorage",
+#     },
+# }
