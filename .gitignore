@@ -6,3 +6,4 @@ media/
 *.log
 .DS_Store
 settings.ini
+staticfiles/
