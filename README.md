@@ -20,16 +20,18 @@ A personal blog web application built with Python and Django as a portfolio proj
 - Default image fallback for posts without images
 
 ## Technologies Used
-- Python 3
-- Django
+- Python 3.13
+- Django 6.0
 - SQLite
 - HTML/CSS
 - Simple.css
+- Whitenoise (static files in production)
+- python-decouple (environment variables)
 
 ## Getting Started
 
 ### Prerequisites
-- Python 3 installed
+- Python 3.13 installed
 - pip installed
 
 ### Installation
@@ -45,16 +47,25 @@ source .env/bin/activate     # Mac/Linux
 3. Install dependencies:  
 pip install -r requirements.txt
 
-4. Run migrations:  
+4. Create settings.ini in project root
+In it goes:  
+[settings]  
+SECRET_KEY=your secret key  
+DEBUG=True  
+ALLOWED_HOSTS=your allowed host
+
+5. Run migrations:  
 python manage.py migrate
 
-5. Create admin superuser:  
+6. Create admin superuser:  
 python manage.py createsuperuser
 
-6. Start development server:  
+7. Start development server:  
 python manage.py runserver
 
-7. Visit http://127.0.0.1:8000 :
+## Deployment
+Deployed on PythonAnywhere at:
+https://gongzuodk.pythonanywhere.com/
 
 ## Project Structure
 myblog/          → Django project settings and main URLs  
@@ -67,6 +78,6 @@ templates/       → HTML templates
 static/          → CSS and static images
 
 ## Author
-Daniel  
+Daniel K  
 GitHub: https://github.com/Gongzuo-Dk  
 LinkedIn: https://www.linkedin.com/in/danylo-kulynych/
