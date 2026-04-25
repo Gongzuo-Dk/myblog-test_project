@@ -6,7 +6,8 @@ A personal blog web application built with Python and Django as a portfolio proj
 - https://gongzuodk.pythonanywhere.com/ 
 
 ## Screenshots
-**
+<img width="952" height="908" alt="Screenshot 2026-04-25 161743" src="https://github.com/user-attachments/assets/1b565d85-3178-4272-9633-bf6b2c28e081" />
+
 
 ## Features
 - Dynamic blog posts with images, themes and dates
