@@ -3,7 +3,7 @@
 A personal blog web application built with Python and Django as a portfolio project to demonstrate backend web development skills.
 
 ## Live Demo
-**
+- https://gongzuodk.pythonanywhere.com/ 
 
 ## Screenshots
 **
