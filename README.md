@@ -5,8 +5,11 @@ A personal blog web application built with Python and Django as a portfolio proj
 ## Live Demo
 - https://gongzuodk.pythonanywhere.com/ 
 
-## Screenshots
-<img width="952" height="908" alt="Screenshot 2026-04-25 161743" src="https://github.com/user-attachments/assets/1b565d85-3178-4272-9633-bf6b2c28e081" />
+## Screenshots  
+- Website on PC:  
+<img width="952" height="908" alt="Screenshot 2026-04-25 161743" src="https://github.com/user-attachments/assets/1b565d85-3178-4272-9633-bf6b2c28e081" />  
+  
+- Website on a Phone:  
 <img width="1080" height="2124" alt="67658_5188030074314686720_n" src="https://github.com/user-attachments/assets/368a3347-5f38-47d4-9825-e68a647bce43" />
 
 
@@ -41,7 +44,7 @@ A personal blog web application built with Python and Django as a portfolio proj
 1. Clone the repository:  
 git clone https://github.com/Gongzuo-Dk/myblog-test_project.git cd myblog-test_project
 
-2. Create and activate virtual environment:  
+2. Create and activate a virtual environment:  
 python -m venv .env  
 .env\Scripts\activate        # Windows  
 source .env/bin/activate     # Mac/Linux
@@ -49,7 +52,7 @@ source .env/bin/activate     # Mac/Linux
 3. Install dependencies:  
 pip install -r requirements.txt
 
-4. Create settings.ini in project root
+4. Create settings.ini in the project root  
 In it goes:  
 [settings]  
 SECRET_KEY=your secret key  
